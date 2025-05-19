@@ -4,149 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Краса природи</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Comfortaa', cursive;
-      background: linear-gradient(to bottom, #cdefff, #ffffff);
+      font-family: sans-serif;
+      background-color: #e0f7fa;
+      text-align: center;
       margin: 0;
       padding: 0;
-      color: #2c3e50;
-      text-align: center;
-      background-image: url('https://www.transparenttextures.com/patterns/clouds.png');
     }
-
     header {
-      padding: 2rem;
-      background-color: #aee1f9;
-      border-bottom: 5px solid #84d2f6;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    .description {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .buttons {
-      margin: 2rem;
-    }
-
-    .buttons button {
-      background-color: #6ec1e4;
-      border: none;
+      background-color: #4fc3f7;
       color: white;
-      padding: 0.8rem 1.5rem;
-      margin: 0.5rem;
-      font-size: 1rem;
-      border-radius: 20px;
+      padding: 1em;
+    }
+    .buttons {
+      margin: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #81d4fa;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s;
     }
-
-    .buttons button:hover {
-      background-color: #3ba9d6;
-    }
-
-    .image-container {
-      margin: 1rem auto;
+    img {
       max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
     }
-
-    .image-container img {
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      transition: opacity 0.5s ease;
-      opacity: 1;
-    }
-
     .caption {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      color: #34495e;
-    }
-
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      background-color: #aee1f9;
-      font-size: 0.9rem;
-      border-top: 5px solid #84d2f6;
+      font-size: 18px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Краса природи</h1>
+    <p>Обери пору року і подивись на її красу</p>
+  </header>
+  <div class="buttons">
+    <button onclick="changeImage('spring')">Весна</button>
+    <button onclick="changeImage('summer')">Літо</button>
+    <button onclick="changeImage('autumn')">Осінь</button>
+    <button onclick="changeImage('winter')">Зима</button>
+  </div>
+  <div>
+    <img id="natureImage" src="https://upload.wikimedia.org/wikipedia/commons/5/58/Cherry_blossoms_in_Hokkaido%2C_Japan.jpg" alt="Природа">
+    <div class="caption" id="imageCaption">Весна — пора цвітіння 🌸</div>
+  </div>
 
-<header>
-  <h1>🌿 Краса природи очима ШІ 🌄</h1>
-</header>
+  <script>
+    const images = {
+      spring: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/5/58/Cherry_blossoms_in_Hokkaido%2C_Japan.jpg",
+        caption: "Весна — пора цвітіння 🌸"
+      },
+      summer: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Summer_Landscape%2C_Leh%2C_Ladakh.jpg",
+        caption: "Літо — сонячне та яскраве ☀️"
+      },
+      autumn: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Autumn_Landscape_%2842069794160%29.jpg",
+        caption: "Осінь — кольорове листя 🍂"
+      },
+      winter: {
+        src: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Winter_landscape_Switzerland.jpg",
+        caption: "Зима — сніг та спокій ❄️"
+      }
+    };
 
-<div class="description">
-  <p>Цей сайт показує, як штучний інтелект "уявляє" природу. Обери пору року і подивись на дивовижні пейзажі! 🌸❄️🍁🌞</p>
-</div>
-
-<div class="buttons">
-  <button onclick="changeImage('spring')">Весна</button>
-  <button onclick="changeImage('summer')">Літо</button>
-  <button onclick="changeImage('autumn')">Осінь</button>
-  <button onclick="changeImage('winter')">Зима</button>
-</div>
-
-<div class="image-container">
-  <img id="natureImage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cherry_blossoms_in_Hokkaido%2C_Japan.jpg/640px-Cherry_blossoms_in_Hokkaido%2C_Japan.jpg" alt="Пейзаж природи">
-  <div class="caption" id="imageCaption">Весна — пора цвітіння й оновлення 🌸</div>
-</div>
-
-<footer>
-  Зроблено з любов’ю до природи 💚 
-</footer>
-
-<audio autoplay loop>
-  <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_fcf2b8e8a7.mp3" type="audio/mpeg">
-  Ваш браузер не підтримує відтворення аудіо.
-</audio>
-
-<script>
-  const images = {
-    spring: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cherry_blossoms_in_Hokkaido%2C_Japan.jpg/640px-Cherry_blossoms_in_Hokkaido%2C_Japan.jpg",
-      caption: "Весна — пора цвітіння й оновлення 🌸"
-    },
-    summer: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Summer_Landscape%2C_Leh%2C_Ladakh.jpg/640px-Summer_Landscape%2C_Leh%2C_Ladakh.jpg",
-      caption: "Літо — сонце, зелень і тепло ☀️"
-    },
-    autumn: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Autumn_Landscape_%2842069794160%29.jpg/640px-Autumn_Landscape_%2842069794160%29.jpg",
-      caption: "Осінь — барви листя й затишок 🍁"
-    },
-    winter: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Winter_landscape_Switzerland.jpg/640px-Winter_landscape_Switzerland.jpg",
-      caption: "Зима — сніг, казка і тиша ❄️"
-    }
-  };
-
-  function changeImage(season) {
-    const img = document.getElementById('natureImage');
-    const caption = document.getElementById('imageCaption');
-    img.style.opacity = 0;
-    setTimeout(() => {
-      img.src = images[season].src;
+    function changeImage(season) {
+      const image = document.getElementById('natureImage');
+      const caption = document.getElementById('imageCaption');
+      image.src = images[season].src;
       caption.textContent = images[season].caption;
-      img.style.opacity = 1;
-    }, 300);
-  }
-</script>
-
+    }
+  </script>
 </body>
 </html>
+
 
 
 
